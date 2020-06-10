@@ -7,7 +7,7 @@ import {
 const Sitebar = (props) => {
     return (
         <Navbar color="faded" light expand="md">
-            <NavbarBrand href="/">Vegetarian Food Ideas for the Carnivore</NavbarBrand>
+            <NavbarBrand href="/">Vegetarian Food Ideas For the Carnivore</NavbarBrand>
         </Navbar>
     )
 }

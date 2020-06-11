@@ -4,7 +4,7 @@ import {
     NavbarBrand,
 } from 'reactstrap';
 
-const Sitebar = (props) => {//make this a header navbar with navbarBrand on left and a signup/sign in toggle with submit?
+const Sitebar = (props) => {//make this a header navbar with navbarBrand on left and a signup/sign in toggle or dropdown with submit?
     return (
         <Navbar color="faded" light expand="md">
             <NavbarBrand href="/">Vegetarian food ideas for the carvnivore</NavbarBrand>

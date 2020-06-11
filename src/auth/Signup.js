@@ -3,18 +3,17 @@ import {Form, FormGroup, Label, Input, Button} from 'reactstrap';//use of bootst
 import APIURL from './../helpers/Environment';
 
 const Signup = (props) => {
+    //const [firstName, setFirstName] = useState('');
+    //const [lastName, setLastName] = useState('');
     const [username, setUsername] = useState('');//we've added username and password to our state. these state variables will allow us...
+    //const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');//to respond to and control the display of teh user-typed info into the input fields in our form we return from this component
-    //firstName
-    //lastName
-    //userName with restrictions from assignment
-    //email with restrictions from assignment
-    //password with restrictions from assignment
+
     const handleSubmit = (event) => {//we're taking in an event, adn we are preventing default, which in this instance will prevent our page from refreshing when we submit the form
         event.preventDefault();
-        fetch(`${APIURL}/user/register`, {//sending a fetch request to the endpoint determined in our server, that is where we go to signup. this endpoint is determined by whatever back end you are using. it is declared in your 'apicontroller' controller
+        fetch(`${APIURL}/user/signup`, {//sending a fetch request to the endpoint determined in our server, that is where we go to signup. this endpoint is determined by whatever back end you are using. it is declared in your 'apicontroller' controller
             method: 'POST',//the method of the fetch is a POST
-            body: JSON.stringify({userName: username, password: password}),//we're including a body with our state info set as user. this again correlates to the backend. this has to match what the backend is expecting.
+            body: JSON.stringify({userName: username, userName: username, userName: username, userName: username, password: password}),//we're including a body with our state info set as user. this again correlates to the backend. this has to match what the backend is expecting.
             headers: new Headers({
                 'Content-Type': 'application/json'//include the header 'content-type', this lets our server know what type of info we are sending to it, so it can decide if it can handle it and what to do with it.
             })
@@ -34,9 +33,24 @@ const Signup = (props) => {
              * don't use parentheses within the curly braces, because we aren't calling the callback functions 
              * ourselves--that's handled by the onSubmit handler. */}
                 <FormGroup>
-                    <Label htmlFor="username">Username (required)</Label>
+                    <Label htmlFor="username">First Name</Label>
                     <Input onChange={(e) => setUsername(e.target.value)} name="username" value={username} />{/**once again, bc our input fields are tied to the state variables, which currently never change, their text content will be static as well */}
                 </FormGroup>
+                <FormGroup>
+                    <Label htmlFor="username">Last Name</Label>
+                    <Input onChange={(e) => setUsername(e.target.value)} name="username" value={username} />{/**once again, bc our input fields are tied to the state variables, which currently never change, their text content will be static as well */}
+                </FormGroup>
+                
+                <FormGroup>
+                    <Label htmlFor="username">Username</Label>
+                    <Input onChange={(e) => setUsername(e.target.value)} name="username" value={username} />{/**once again, bc our input fields are tied to the state variables, which currently never change, their text content will be static as well */}
+                </FormGroup>
+
+                <FormGroup>
+                    <Label htmlFor="username">Email</Label>
+                    <Input onChange={(e) => setUsername(e.target.value)} name="username" value={username} />{/**once again, bc our input fields are tied to the state variables, which currently never change, their text content will be static as well */}
+                </FormGroup>
+
                 <FormGroup>
                     <Label htmlFor="password">Password</Label>
                     <Input onChange={(e) => setPassword(e.target.value)} name="password" value={password}/>{/**add onChange attributes to our JSX aloowing us to handle any input changes to the form...also in username */}

@@ -7,9 +7,9 @@ const Signup = (props) => {
     //const [lastName, setLastName] = useState('');
     const [username, setUsername] = useState('');//we've added username and password to our state. these state variables will allow us...
     //const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');//to respond to and control the display of teh user-typed info into the input fields in our form we return from this component
+    const [password, setPassword] = useState('');//to respond to and control the display of the user-typed info into the input fields in our form we return from this component
 
-    const handleSubmit = (event) => {//we're taking in an event, adn we are preventing default, which in this instance will prevent our page from refreshing when we submit the form
+    const handleSubmit = (event) => {//we're taking in an event, and we are preventing default, which in this instance will prevent our page from refreshing when we submit the form
         event.preventDefault();
         fetch(`${APIURL}/user/signup`, {//sending a fetch request to the endpoint determined in our server, that is where we go to signup. this endpoint is determined by whatever back end you are using. it is declared in your 'apicontroller' controller
             method: 'POST',//the method of the fetch is a POST

@@ -9,9 +9,10 @@ switch (window.location.hostname) {
         //this is the deployed react application 
     case 'bd-veglogapi.herokuapp.com':
         //this is the full url of my deployed server/API
-        APIURL = 'https://bd-vegapi.herokuapp.com'
+        APIURL = 'https://bd-vegapi.herokuapp.com';
+        break;
     default:
-            console.log('cant reach an API')
-}
+            console.log('cant reach an API');
+};
 
 export default APIURL;

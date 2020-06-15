@@ -21,7 +21,7 @@ function App() {
   return (
     <div>
       <Sitebar/>
-      <Auth/>
+      <Auth updateToken={updateToken}/>
     </div>
   );
 }

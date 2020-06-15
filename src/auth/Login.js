@@ -11,7 +11,7 @@ const Login = (props) => {
         event.preventDefault();
         fetch(`${APIURL}/user/login`,{
             method: 'POST',
-            body: JSON.stringify({username: username, password: password}),
+            body: JSON.stringify({userName: username, password: password}),
             headers: new Headers({
                 'Content-Type': 'application/json'
             })

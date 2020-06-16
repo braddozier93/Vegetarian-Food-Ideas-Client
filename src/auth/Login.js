@@ -5,8 +5,7 @@ import APIURL from './../helpers/Environment';
 const Login = (props) => {
     const [username, setUsername] = useState('');//creating state variables 'username' and 'password' which will be fed information from the input fields in our form.
     const [password, setPassword] = useState('');//we want these to be contolled by React, as oppsed to grabbing these values of the input fields without using state variables. to avoid possible bugs
-    //userName
-    //password
+    
     const handleSubmit = (event) => {
         event.preventDefault();
         fetch(`${APIURL}/user/login`,{

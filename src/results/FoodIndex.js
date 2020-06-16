@@ -53,13 +53,13 @@ const FoodIndex = (props) => {
     return(
         <Container>
             <Row>
-                <Col md="1">
+                <Col md="3">
                     <Button type="button" onClick={createOn}>Add Food Item</Button>
                     {createActive ? <FoodCreate foodToCreate={foodToCreate}
                 createOff={createOff} token={props.token} fetchFoods={fetchFoods}/> : <></>}
                     {/* <FoodCreate /> */}
                  </Col>
-                 <Col md="11">{/**adding props to our FoodResults call//we later modified our WorkoutResults component so that FoodEdit will be displayed at appropriate times */}
+                 <Col md="9">{/**adding props to our FoodResults call//we later modified our WorkoutResults component so that FoodEdit will be displayed at appropriate times */}
                     <FoodResults foods={foods} editUpdateFood={editUpdateFood} updateOn={updateOn} fetchFoods={fetchFoods} token={props.token} />
                  </Col>
                 {updateActive ? <FoodEdit foodToUpdate={foodToUpdate}

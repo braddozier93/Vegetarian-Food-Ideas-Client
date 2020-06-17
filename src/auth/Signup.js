@@ -26,7 +26,7 @@ const Signup = (props) => {
 
     return (
         <div>
-            <h1>Sign Up</h1>
+            <h1 style={{textAlign:'center'}}>Sign Up</h1>
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
                     <Label htmlFor="firstname">First Name</Label>
@@ -38,19 +38,17 @@ const Signup = (props) => {
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="username">Username</Label>
-                    <Input onChange={(e) => setUsername(e.target.value)} name="username" pattern="(?=.*[!@#$%^&*])(?=.*[a-z]).{4,}" value={username} />
+                    <Input onChange={(e) => setUsername(e.target.value)} name="username" pattern="(?=.*[!@#$%^&*])(?=.*[a-z]).{4,}" placeholder="Must Be 4 or More Characters & Include At Least 1 Special Character"value={username} />
                 </FormGroup>
-
                 <FormGroup>
                     <Label htmlFor="email">Email</Label>
-                    <Input onChange={(e) => setEmail(e.target.value)} name="email" type="email" value={email} />
+                    <Input onChange={(e) => setEmail(e.target.value)} name="email" type="email" placeholder="Enter Email Address"value={email} />
                 </FormGroup>
-
                 <FormGroup>
                     <Label htmlFor="password">Password</Label>
-                    <Input onChange={(e) => setPassword(e.target.value)} name="password" minlength="5" value={password}/>
+                    <Input onChange={(e) => setPassword(e.target.value)} name="password" minlength="5" placeholder="Password Must Be At Least 5 Characters In Length" value={password}/>
                 </FormGroup>
-                <Button type="submit" color="info">Signup</Button>
+                <Button type="submit" color="secondary">Signup</Button>
             </Form>
         </div>
     )

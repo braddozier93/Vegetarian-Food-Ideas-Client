@@ -23,7 +23,7 @@ const Login = (props) => {
 
     return (
     <div>
-        <h1>Login</h1>
+        <h1 style={{textAlign:"center"}}>Login</h1>
         <Form onSubmit={handleSubmit}>
             <FormGroup>
                 <Label htmlFor="username">Username</Label>
@@ -33,7 +33,7 @@ const Login = (props) => {
                 <Label htmlFor="password">Password</Label>
                 <Input onChange={(e) => setPassword(e.target.value)} name="password" value={password}/>
             </FormGroup>
-            <Button type="submit" color="success">Login</Button>
+            <Button type="submit" color="secondary">Login</Button>
         </Form>
     </div>
     )

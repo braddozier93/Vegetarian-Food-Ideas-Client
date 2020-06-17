@@ -31,11 +31,11 @@ const FoodEdit = (props) => {
             <ModalBody>
                 <Form onSubmit={foodUpdate}>{/**triggering the foodUpdate function when we submit the edit form */}
                     <FormGroup>
-                        <Label htmlFor="name">Edit Link to Recipe/Restaurant:</Label>
+                        <Label htmlFor="name">Edit Name:</Label>
                         <Input name="name" value={editName} onChange={(e) => setEditName(e.target.value)} />
                     </FormGroup>
                     <FormGroup>
-                        <Label htmlFor="image">Edit Link to Recipe/Restaurant:</Label>
+                        <Label htmlFor="image">Edit Image URL:</Label>
                         <Input name="image" value={editIma} onChange={(e) => setEditIma(e.target.value)} />
                     </FormGroup>
                     <FormGroup>

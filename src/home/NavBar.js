@@ -17,7 +17,7 @@ const Sitebar = (props) => {//make this a header navbar with navbarBrand on left
         setIsOpen(newIsOpen);
     }
     return (
-        <Navbar style={{backgroundColor: '#c9e265'}} light expand="md">
+        <Navbar style={{backgroundColor: '#e8f8f5'}} light expand="md">
             <NavbarBrand href="/">Vegetarian Meal Ideas</NavbarBrand>
             <NavbarToggler onClick={toggle}/>
             <Collapse isOpen={isOpen} navbar>

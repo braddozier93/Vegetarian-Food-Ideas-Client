@@ -7,10 +7,13 @@ const Auth = (props) => {//add image above Container and a background for the en
     return(
         <Container className="auth-container">
             <Row>
-                <Col md="6">
+                <Col md="5" style={{padding:'20px 20px 30px 20px', border:'1px solid black', marginTop:'50px', marginBottom:'100px'}}>
                 <Signup updateToken={props.updateToken} />
                 </Col>
-                <Col md="6" className="login-col">
+                <Col md="2">
+
+                </Col>
+                <Col md="5" className="login-col" style={{padding:'20px 20px 20px 20px', border:'1px solid black', marginTop:'50px', marginBottom:'100px'}}>
                 <Login updateToken={props.updateToken} />
                 </Col>
             </Row>

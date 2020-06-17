@@ -51,18 +51,23 @@ const FoodIndex = (props) => {
 
 
     return(
-        <Container>
+        <Container style={{backgroundColor:'#f5d1c4',
+            backgroundImage:'url("https://www.transparenttextures.com/patterns/black-linen.png")'}}>
             <Row>
                 <Col md="3">
                     <Button type="button" onClick={createOn} style={{marginTop:'60px'}}>Add Food Item</Button>
                     {createActive ? <FoodCreate foodToCreate={foodToCreate}
                 createOff={createOff} token={props.token} fetchFoods={fetchFoods}/> : <></>}
                  </Col>
-                 <Col md="9">
+                 <Col md="6">
                     <FoodResults foods={foods} editUpdateFood={editUpdateFood} updateOn={updateOn} fetchFoods={fetchFoods} token={props.token} />
                  </Col>
                 {updateActive ? <FoodEdit foodToUpdate={foodToUpdate}
                 updateOff={updateOff} token={props.token} fetchFoods={fetchFoods}/> : <></>}
+                <Col md="3">
+                    <Button type="button" onClick={createOn} style={{marginTop: '60px'}}>Search by Category</Button>
+                    <Button type="button" onClick={createOn} style={{marginTop: '30px'}}>Search by Cuisine</Button>
+                </Col>
             </Row>
         </Container>
     )

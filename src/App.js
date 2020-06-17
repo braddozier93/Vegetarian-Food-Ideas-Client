@@ -30,7 +30,8 @@ function App() {
 
 
   return (
-    <div>
+    <div style={{backgroundColor:'#f5d1c4',
+    backgroundImage:'url("https://www.transparenttextures.com/patterns/black-linen.png")'}}>
       <Sitebar clearToken={clearToken} /> 
       {protectedViews()}
     </div>

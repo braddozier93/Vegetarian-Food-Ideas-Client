@@ -4,7 +4,7 @@ import APIURL from './../helpers/Environment';
 
 const FoodResults = (props) => {
     const deleteFood = (food) => {
-        fetch(`${APIURL}/${food.id}`, {
+        fetch(`${APIURL}/food/${food.id}`, {
             method: 'DELETE', 
             headers: new Headers({
                 'Content-Type': 'application/json',

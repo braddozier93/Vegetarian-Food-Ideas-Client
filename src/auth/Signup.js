@@ -1,65 +1,64 @@
 import React, {useState} from 'react';
-import {Form, FormGroup, Label, Input, Button} from 'reactstrap';//use of bootstrap is same as our login component. these forms contain the same info, but differ only in their titles and the action they initiate with our server when a successful use account is made or processed
+import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
 import APIURL from './../helpers/Environment';
 
 const Signup = (props) => {
     const [firstname, setFirstname] = useState('');
     const [lastname, setLastname] = useState('');
-    const [username, setUsername] = useState('');//we've added username and password to our state. these state variables will allow us...
+    const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');//to respond to and control the display of the user-typed info into the input fields in our form we return from this component
+    const [password, setPassword] = useState('');
+    const [passwordError, setPasswordError] = ('');
+    const [emailError, setEmailError] = ('');
 
-    const handleSubmit = (event) => {//we're taking in an event, and we are preventing default, which in this instance will prevent our page from refreshing when we submit the form
+    const validate = () => {
+        if (!this.email.includes('@')) {
+            setEmailError = 'invalid email';
+
+        }
+    }
+    //????store new error variables in my state, then create a validate function, if not 5 or more characters, return error message
+//is this where I do validations//create a validate function
+    const handleSubmit = (event) => {
         event.preventDefault();
-        fetch(`${APIURL}/user/signup`, {//sending a fetch request to the endpoint determined in our server, that is where we go to signup. this endpoint is determined by whatever back end you are using. it is declared in your 'apicontroller' controller
-            method: 'POST',//the method of the fetch is a POST
+        fetch(`${APIURL}/user/signup`, {
+            method: 'POST',
             body: JSON.stringify({firstName: firstname, lastName: lastname, userName: username, email: email, password: password}),//we're including a body with our state info set as user. this again correlates to the backend. this has to match what the backend is expecting.
             headers: new Headers({
-                'Content-Type': 'application/json'//include the header 'content-type', this lets our server know what type of info we are sending to it, so it can decide if it can handle it and what to do with it.
+                'Content-Type': 'application/json'
             })
         }).then(
-            (response) => response.json()//resolving the promise from the fetch and calling .json(), allowing us to turn the response into JSON when it resolves.
+            (response) => response.json() 
         ).then((data) => {
-            props.updateToken(data.sessionToken)//resolving the .json()promise, and taking the data we get back from the server and then calling our updateToken function with the sessionToken we get back in the data object
+            props.updateToken(data.sessionToken)
         })
     }
 
     return (
         <div>
             <h1>Sign Up</h1>
-            <Form onSubmit={handleSubmit}>{/**  Just like with our 'onChange' event handler built into the JSX, 
-             * we are using an 'onSubmit' event handler in our Form bootstrap component.  The onSubmit handler will
-             *  listen to and respond to a 'submit' even with our handleSubmit callback.  Notice again, that we 
-             * don't use parentheses within the curly braces, because we aren't calling the callback functions 
-             * ourselves--that's handled by the onSubmit handler. */}
+            <Form onSubmit={handleSubmit}>
                 <FormGroup>
                     <Label htmlFor="firstname">First Name</Label>
                     <Input onChange={(e) => setFirstname(e.target.value)} name="firstname" value={firstname} />{/**once again, bc our input fields are tied to the state variables, which currently never change, their text content will be static as well */}
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="lastname">Last Name</Label>
-                    <Input onChange={(e) => setLastname(e.target.value)} name="lastname" value={lastname} />{/**once again, bc our input fields are tied to the state variables, which currently never change, their text content will be static as well */}
+                    <Input onChange={(e) => setLastname(e.target.value)} name="lastname" value={lastname} />
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="username">Username</Label>
-                    <Input onChange={(e) => setUsername(e.target.value)} name="username" value={username} />{/**once again, bc our input fields are tied to the state variables, which currently never change, their text content will be static as well */}
+                    <Input onChange={(e) => setUsername(e.target.value)} name="username" value={username} />
                 </FormGroup>
 
                 <FormGroup>
                     <Label htmlFor="email">Email</Label>
-                    <Input onChange={(e) => setEmail(e.target.value)} name="email" value={email} />{/**once again, bc our input fields are tied to the state variables, which currently never change, their text content will be static as well */}
+                    <Input onChange={(e) => setEmail(e.target.value)} name="email" value={email} />
                 </FormGroup>
 
                 <FormGroup>
                     <Label htmlFor="password">Password</Label>
-                    <Input onChange={(e) => setPassword(e.target.value)} name="password" value={password}/>{/**add onChange attributes to our JSX aloowing us to handle any input changes to the form...also in username */}
-                    {/**We have defined two functions in-line with our JSX.  Each of these functions is a callback
-                     *  responding to the onChange event listener we've inserted into the input fields.  Just as with 
-                     * vanilla JS we saw in gold badge, these callback functions are called by the event handler, 
-                     * not by us.  Thus, we never have to call these functions in our code, just defined them.  
-                     * These callback functions, being called within the onChange event handlers, are called with 
-                     * an 'event' object as an argument.  This is default behavior to any event handler. 
-                     *  Digging into these event objects let us grab hold of the input data the user has typed. */}
+                    <Input minLength={5} onChange={(e) => setPassword(e.target.value)} name="password" value={password}/>
                 </FormGroup>
                 <Button type="submit" color="info">Signup</Button>
             </Form>

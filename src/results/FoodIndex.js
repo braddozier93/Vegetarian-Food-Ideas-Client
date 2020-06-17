@@ -6,20 +6,20 @@ import FoodCreate from './FoodCreate';
 import APIURL from './../helpers/Environment';
 
 const FoodIndex = (props) => {
-    const [foods, setFoods] = useState([]);//add state variables to our WorkoutIndex component
-    const [updateActive, setUpdateActive] = useState(false);//used to conditionally display our WorkoutEdit component.Boolean..only active(true) when a user clicks the update button within a row of our WorkoutTable component
-    const [foodToUpdate, setFoodToUpdate] = useState({}); //used as a prop by WorkoutEdit. when the user clicks on a row of the workoutTable, this will be switched from an empty object to the workout object displayed by the rown the user clicked on. WorkoutEdit will then use this object to request updated workout details to the appropriate workout in our database.
+    const [foods, setFoods] = useState([]);
+    const [updateActive, setUpdateActive] = useState(false);
+    const [foodToUpdate, setFoodToUpdate] = useState({}); 
     const [createActive, setCreateActive] = useState(false);
     const [foodToCreate, setFoodToCreate] = useState({});
 
-    const editUpdateFood = (food) => {//it updates our workoutToUpdate state variable based on the input to this function
+    const editUpdateFood = (food) => {
         setFoodToUpdate(food);
         console.log(food);
     }  
-    const updateOn = () => {//used to togglew our workoutEdit display. On will be passed a prop to WorkoutTable, which will use the function when the user clicks on the Update button. 
+    const updateOn = () => {
         setUpdateActive(true);
     }
-    const updateOff = () => {//used to toggle our WorkoutEdit display. Off will used by WorkoutEdit when we have completed or cancelled the workout edit process.
+    const updateOff = () => {
         setUpdateActive(false)
     }
     const createOn = () => {
@@ -30,7 +30,7 @@ const FoodIndex = (props) => {
     }
              
     const fetchFoods = () => {
-        fetch(`${APIURL}/food`, {//fetching our workouts from the server
+        fetch(`${APIURL}/food`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -54,12 +54,11 @@ const FoodIndex = (props) => {
         <Container>
             <Row>
                 <Col md="3">
-                    <Button type="button" onClick={createOn}>Add Food Item</Button>
+                    <Button type="button" onClick={createOn} style={{marginTop:'60px'}}>Add Food Item</Button>
                     {createActive ? <FoodCreate foodToCreate={foodToCreate}
                 createOff={createOff} token={props.token} fetchFoods={fetchFoods}/> : <></>}
-                    {/* <FoodCreate /> */}
                  </Col>
-                 <Col md="9">{/**adding props to our FoodResults call//we later modified our WorkoutResults component so that FoodEdit will be displayed at appropriate times */}
+                 <Col md="9">
                     <FoodResults foods={foods} editUpdateFood={editUpdateFood} updateOn={updateOn} fetchFoods={fetchFoods} token={props.token} />
                  </Col>
                 {updateActive ? <FoodEdit foodToUpdate={foodToUpdate}

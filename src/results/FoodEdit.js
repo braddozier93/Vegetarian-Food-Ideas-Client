@@ -16,7 +16,7 @@ const FoodEdit = (props) => {
         fetch(`${APIURL}/food/${props.foodToUpdate.id}`, {
             method: 'PUT',
             body: JSON.stringify({nameOfFood: editName, image: editIma, linkToRecipe: editLin, category: editCat, cuisine: editCuis, descriptionOfFood: editDesc, rating: editRat}),
-            headers: new Headers({//^we append an object to the body of our request up here^ form must match the input expexted by our server. then we specify thwe content being sent by this fetch, and include our token to access the guarded endpoint we'd like to talk to
+            headers: new Headers({
                 'Content-Type': 'application/json',
                 'Authorization': props.token
             })
@@ -29,7 +29,7 @@ const FoodEdit = (props) => {
         <Modal isOpen={true}>
             <ModalHeader>Edit a food item</ModalHeader>
             <ModalBody>
-                <Form onSubmit={foodUpdate}>{/**triggering the workoutUpdate function when we submit the edit form */}
+                <Form onSubmit={foodUpdate}>{/**triggering the foodUpdate function when we submit the edit form */}
                     <FormGroup>
                         <Label htmlFor="name">Edit Link to Recipe/Restaurant:</Label>
                         <Input name="name" value={editName} onChange={(e) => setEditName(e.target.value)} />

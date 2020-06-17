@@ -17,16 +17,16 @@ const FoodResults = (props) => {
         return props.foods.map((food, index) => {
             return (
                 <Row>
-                    <Col sm="6">
-                <Card key={index}>
+                    <Col sm="8">
+                <Card key={index} body outline color="secondary">
                     <th scope="row">{food.id}</th>
                     <CardTitle>{food.nameOfFood}</CardTitle>
                     <CardImg top width="200px" height="300px" src={food.image} alt="Card image cap" />
                     <CardBody>
-                    <CardSubtitle>{food.linkToRecipe}</CardSubtitle>
+                    <CardSubtitle>Link to Recipe/Restaurant: <a href={food.linkToRecipe} target="blank">{food.linkToRecipe}</a></CardSubtitle>
                     <CardSubtitle>Category: {food.category}</CardSubtitle>
                     <CardSubtitle>Cuisine: {food.cuisine}</CardSubtitle>
-                    <CardText>{food.descriptionOfFood}</CardText>
+                    <CardText>Notes: {food.descriptionOfFood}</CardText>
                     <CardText>My Rating: {food.rating}</CardText>
                         <Button style={{color:'orange'}} onClick={() => {props.editUpdateFood(food); props.updateOn()}}>Update My Food</Button>
                         <Button onClick={() => {deleteFood(food)}}>Delete My Food</Button>

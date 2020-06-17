@@ -1,5 +1,6 @@
 import React from 'react';
 import {Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button, Row, Col} from 'reactstrap';
+//import {Link} from "react-router-dom";
 import APIURL from './../helpers/Environment';
 
 const FoodResults = (props) => {
@@ -21,9 +22,9 @@ const FoodResults = (props) => {
                 <Card key={index} body outline color="secondary">
                     <th scope="row">{food.id}</th>
                     <CardTitle>{food.nameOfFood}</CardTitle>
-                    <CardImg top width="200px" height="300px" src={food.image} alt="Card image cap" />
+                    <CardImg top width="180px" height="180px" src={food.image} alt="Card image cap" />
                     <CardBody>
-                    <CardSubtitle>Link to Recipe/Restaurant: <a href={food.linkToRecipe} target="blank">{food.linkToRecipe}</a></CardSubtitle>
+                    <CardSubtitle>Link to Recipe/Restaurant:<a target="_blank" href={"https://" + food.linkToRecipe}>{food.linkToRecipe}</a></CardSubtitle>
                     <CardSubtitle>Category: {food.category}</CardSubtitle>
                     <CardSubtitle>Cuisine: {food.cuisine}</CardSubtitle>
                     <CardText>Notes: {food.descriptionOfFood}</CardText>

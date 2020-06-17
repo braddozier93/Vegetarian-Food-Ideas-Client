@@ -8,17 +8,7 @@ const Signup = (props) => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [passwordError, setPasswordError] = ('');
-    const [emailError, setEmailError] = ('');
 
-    const validate = () => {
-        if (!this.email.includes('@')) {
-            setEmailError = 'invalid email';
-
-        }
-    }
-    //????store new error variables in my state, then create a validate function, if not 5 or more characters, return error message
-//is this where I do validations//create a validate function
     const handleSubmit = (event) => {
         event.preventDefault();
         fetch(`${APIURL}/user/signup`, {
@@ -48,17 +38,17 @@ const Signup = (props) => {
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="username">Username</Label>
-                    <Input onChange={(e) => setUsername(e.target.value)} name="username" value={username} />
+                    <Input onChange={(e) => setUsername(e.target.value)} name="username" pattern="(?=.*[!@#$%^&*])(?=.*[a-z]).{4,}" value={username} />
                 </FormGroup>
 
                 <FormGroup>
                     <Label htmlFor="email">Email</Label>
-                    <Input onChange={(e) => setEmail(e.target.value)} name="email" value={email} />
+                    <Input onChange={(e) => setEmail(e.target.value)} name="email" type="email" value={email} />
                 </FormGroup>
 
                 <FormGroup>
                     <Label htmlFor="password">Password</Label>
-                    <Input minLength={5} onChange={(e) => setPassword(e.target.value)} name="password" value={password}/>
+                    <Input onChange={(e) => setPassword(e.target.value)} name="password" minlength="5" value={password}/>
                 </FormGroup>
                 <Button type="submit" color="info">Signup</Button>
             </Form>

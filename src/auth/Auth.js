@@ -8,7 +8,7 @@ import './Auth.css';
 const Auth = (props) => {//add image above Container and a background for the entire auth.js
     return(
         <Container className="auth-container">
-            <h1 id="welcomeHeading">VEGHEAD</h1>
+            <h1 id="welcomeHeading">VEG-HEAD</h1>
             <div class="images">
                 <img id="foodImages" src={'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2020%2F04%2F27%2F4548470.jpg-copy.jpg&w=1200&c=sc&poi=face&q=85'}/>
                 <img id="foodImages" src={'https://cookieandkate.com/images/2014/02/sweet-potato-and-black-bean-tacos-with-avocado-pepita-dip-2.jpg'}/>

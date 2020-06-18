@@ -20,7 +20,7 @@ const Sitebar = (props) => {//make this a header navbar with navbarBrand on left
     }
     return (
         <Navbar id="Navbar" light expand="md">
-            <NavbarBrand href="/">Vegetarian Meal Ideas</NavbarBrand>
+            <NavbarBrand href="/">VEG-HEAD</NavbarBrand>
             <NavbarToggler onClick={toggle}/>
             <Collapse isOpen={isOpen} navbar>
                 <Nav className="ml-auto" navbar>

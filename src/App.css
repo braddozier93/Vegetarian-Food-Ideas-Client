@@ -37,9 +37,38 @@
     transform: rotate(360deg);
   }
 }
-/*CARD STYLING*/
-#resultimage {
-  border: 1px solid gray
+/*navbar*/
+#Navbar {
+  background-color: #f2f3f4
 }
 
+/*Food Index*/
+#container {
+  /*background-color:#f5d1c4;*/
+  background-image:'url("https://www.transparenttextures.com/patterns/black-linen.png")'
+}
 
+/*Results page*/
+#resultsheading {
+  text-align: center;
+  margin-top:30px;
+  margin-bottom:20px;
+  font-size:40px
+}
+#card {
+  margin-bottom:10px;
+  background-color: lightgray
+}
+#cardTitle {
+  text-align:center;
+  font-size:24px
+  }
+#resultimage {
+  border: 1px solid gray;
+  margin-left: 75px;
+  width: 350px;
+  height: 250px
+}
+#deleteMe {
+ margin-left:171px
+}

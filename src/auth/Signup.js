@@ -38,7 +38,7 @@ const Signup = (props) => {
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="username">Username</Label>
-                    <Input onChange={(e) => setUsername(e.target.value)} name="username" pattern="(?=.*[!@#$%^&*])(?=.*[a-z]).{4,}" placeholder="4 or More Characters & Must Include A Special Character"value={username} />
+                    <Input onChange={(e) => setUsername(e.target.value)} name="username" pattern="(?=.*[!@#$%^&*])(?=.*[a-z]).{4,}" placeholder="4 or More Characters & At Least 1 Special Character"value={username} />
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="email">Email</Label>

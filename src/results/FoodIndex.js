@@ -55,9 +55,10 @@ const FoodIndex = (props) => {
             backgroundImage:'url("https://www.transparenttextures.com/patterns/black-linen.png")'}}>
             <Row>
                 <Col md="3">
-                    <Button type="button" onClick={createOn} style={{marginTop:'60px'}}>Add Food Item</Button>
-                    {createActive ? <FoodCreate foodToCreate={foodToCreate}
-                createOff={createOff} token={props.token} fetchFoods={fetchFoods}/> : <></>}
+                    <Button type="button" onClick={createOn} style={{width:'200px',marginTop:'250px'}}>Add Food Item</Button>
+                    {createActive ? <FoodCreate foodToCreate={foodToCreate}createOff={createOff} token={props.token} fetchFoods={fetchFoods}/> : <></>}
+                    <Button type="button" onClick={createOn} style={{width:'200px',marginTop: '100px'}}>Search by Category</Button>
+                    <Button type="button" onClick={createOn} style={{width:'200px',marginTop: '100px'}}>Search by Cuisine</Button>                 
                  </Col>
                  <Col md="6">
                     <FoodResults foods={foods} editUpdateFood={editUpdateFood} updateOn={updateOn} fetchFoods={fetchFoods} token={props.token} />
@@ -65,8 +66,6 @@ const FoodIndex = (props) => {
                 {updateActive ? <FoodEdit foodToUpdate={foodToUpdate}
                 updateOff={updateOff} token={props.token} fetchFoods={fetchFoods}/> : <></>}
                 <Col md="3">
-                    <Button type="button" onClick={createOn} style={{marginTop: '60px'}}>Search by Category</Button>
-                    <Button type="button" onClick={createOn} style={{marginTop: '30px'}}>Search by Cuisine</Button>
                 </Col>
             </Row>
         </Container>

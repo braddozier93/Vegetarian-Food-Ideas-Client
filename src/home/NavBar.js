@@ -8,6 +8,8 @@ import {
     NavItem, 
     Button
 } from 'reactstrap';
+import '../App.css';
+
 
 const Sitebar = (props) => {//make this a header navbar with navbarBrand on left and a signup/sign in toggle or dropdown with submit?
     
@@ -17,8 +19,8 @@ const Sitebar = (props) => {//make this a header navbar with navbarBrand on left
         setIsOpen(newIsOpen);
     }
     return (
-        <Navbar style={{backgroundColor: '#e8f8f5'}} light expand="md">
-            <NavbarBrand href="/">Vegetarian Meal Ideas</NavbarBrand>
+        <Navbar style={{backgroundColor: '#f2f3f4'}} light expand="md">
+            <NavbarBrand style={{fontFamily:'Balsamiq Sans'}}href="/">Vegetarian Meal Ideas</NavbarBrand>
             <NavbarToggler onClick={toggle}/>
             <Collapse isOpen={isOpen} navbar>
                 <Nav className="ml-auto" navbar>

@@ -26,7 +26,7 @@ const FoodResults = (props) => {
                     <CardTitle id="cardTitle">{food.nameOfFood}</CardTitle>
                     <CardImg id="resultimage" src={food.image} alt="Card image cap" />
                     <CardBody>
-                    <CardSubtitle style={{paddingBottom:'10px'}}>Link to Recipe/Restaurant:  <a target="_blank" href={food.linkToRecipe.substring(0,8) === "https://" ? food.linkToRecipe : "https://" + food.linkToRecipe}>{food.linkToRecipe}</a></CardSubtitle>
+                    <CardSubtitle style={{paddingBottom:'10px'}}>Link to Recipe/Restaurant:  <a target="_blank" rel="noopener noreferrer" href={food.linkToRecipe.substring(0,8) === "https://" ? food.linkToRecipe : "https://" + food.linkToRecipe}>{food.linkToRecipe}</a></CardSubtitle>
                     <CardSubtitle style={{paddingBottom:'10px'}}>Category:  {food.category}</CardSubtitle>
                     <CardSubtitle style={{paddingBottom:'5px'}}>Cuisine:  {food.cuisine}</CardSubtitle>
                     <CardText>Notes:  {food.descriptionOfFood}</CardText>

@@ -8,7 +8,7 @@ function App() {
   const [sessionToken, setSessionToken] = useState('');
   
   useEffect(() => {
-    if (localStorage.getItem('token')){
+    if (localStorage.getItem('token')) {
       setSessionToken(localStorage.getItem('token'));
     }
   }, [])

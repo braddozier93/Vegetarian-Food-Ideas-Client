@@ -13,7 +13,7 @@ const Signup = (props) => {
         event.preventDefault();
         fetch(`${APIURL}/user/signup`, {
             method: 'POST',
-            body: JSON.stringify({firstName: firstname, lastName: lastname, userName: username, email: email, password: password}),//we're including a body with our state info set as user. this again correlates to the backend. this has to match what the backend is expecting.
+            body: JSON.stringify({firstName: firstname, lastName: lastname, userName: username, email: email, password: password}),
             headers: new Headers({
                 'Content-Type': 'application/json'
             })
